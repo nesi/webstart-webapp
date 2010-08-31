@@ -8,6 +8,29 @@
   <servlet>
     <servlet-name>JnlpDownloadServlet</servlet-name>
     <servlet-class>jnlp.sample.servlet.JnlpDownloadServlet</servlet-class>
+    
+    <init-param>
+      <param-name>
+        logLevel
+      </param-name>
+
+      <param-value>
+        DEBUG
+      </param-value>
+    </init-param>
+
+    <init-param>
+      <param-name>
+        logPath
+      </param-name>
+
+      <param-value>
+        /var/log/grisu/jnlpdownloadservlet.log
+      </param-value>
+    </init-param>
+
+    
+    
   </servlet>
     
   <servlet-mapping>
