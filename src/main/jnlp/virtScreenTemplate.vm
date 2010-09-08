@@ -22,12 +22,14 @@
     <all-permissions/>
   </security>
   <resources>
-    <j2se version="1.6+" initial-heap-size="128m" max-heap-size="512m" /> <!-- define required Java runtime version -->
+    <j2se version="1.6+" initial-heap-size="128m" max-heap-size="512m"  /> <!-- define required Java runtime version -->
+      <property name="disableLoadBouncyCastle" value="true"/>
+      <property name="jnlp.packEnabled" value="true"/>
+      <property name="jnlp.versionEnabled" value="true"/>
+      
     $dependencies
-      <extension href="http://grisu.ceres.auckland.ac.nz/bcprov-jdk16.jnlp" />
-      <property name="java.security.policy" value="http://grisu.ceres.auckland.ac.nz/bcprov.policy"/>
-        	<property name="jnlp.packEnabled" value="true"/>
-    	<property name="jnlp.versionEnabled" value="true"/>
+      <extension href="http://grisu.ceres.auckland.ac.nz/bcprov-jdk16-all.jnlp" />
+    
   </resources>
   <application-desc main-class="$mainClass"/>
 </jnlp>

@@ -1,6 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>BeSTGRID grid clients</h2>
 
 <div>
   <h3>Get Grisu!</h3>
@@ -12,6 +12,10 @@
     <li>
       Download and start Virtual screening client:
       <a href="webstart/grisu-virtscreen.jnlp">here</a>
+    </li>
+    <li>
+      Download and start CellML client:
+      <a href="webstart/grisu-cellML.jnlp">here</a>
     </li>
     <li>
       Download and start Blender client:

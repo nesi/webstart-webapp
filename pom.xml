@@ -76,7 +76,19 @@
 									<mainClass>org.bestgrid.virtscreen.view.GrisuVirtScreen</mainClass>
 								</jarResource>
 							</jarResources>
-						</jnlpFile>					
+						</jnlpFile>		
+						<jnlpFile>
+							<templateFilename>cellMLTemplate.vm</templateFilename>
+							<outputFilename>grisu-cellML.jnlp</outputFilename>
+							<jarResources>
+								<jarResource>
+									<groupId>org.bestgrid.grisu</groupId>
+									<artifactId>grisu-CellML</artifactId>
+									<version>0.1-SNAPSHOT</version>
+									<mainClass>org.bestgrid.grisu.cellml.view.CellMLApp</mainClass>
+								</jarResource>
+							</jarResources>
+						</jnlpFile>							
 					</jnlpFiles>
 
 					<sign>
