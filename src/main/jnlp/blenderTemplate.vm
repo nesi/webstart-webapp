@@ -29,9 +29,10 @@
       <property name="disableLoadBouncyCastle" value="true"/>
       <property name="jnlp.packEnabled" value="true"/>
       <property name="jnlp.versionEnabled" value="true"/>
+   	  <property name="grisu.defaultServiceInterface" value="BeSTGRID"/>
       
     $dependencies
-      <extension href="http://grisu.ceres.auckland.ac.nz/bcprov-jdk16-all.jnlp" />
+      <extension href="http://er77.ceres.auckland.ac.nz/bcprov-jdk16-all.jnlp" />
     
   </resources>
   <application-desc main-class="$mainClass"/>

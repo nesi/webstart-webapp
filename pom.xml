@@ -14,13 +14,68 @@
 		<name>BeSTGRID</name>
 		<url>http://bestgrid.org</url>
 	</organization>
+	
+	<properties>
+		<virtscreen.version>0.4.11</virtscreen.version>
+		<cellml.version>0.2.2</cellml.version>
+		<grix.version>1.3.4</grix.version>
+		<blender.version>0.3.3.1.1</blender.version>
+		<templateclient.version>0.5</templateclient.version>
+	</properties>
+	
+	<repositories>
+		<repository>
+			<id>bestgrid.public.release</id>
+			<url>http://code.ceres.auckland.ac.nz/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>bestgrid.public.snapshot</id>
+			<url>http://code.ceres.auckland.ac.nz/nexus/content/groups/public-snapshots/
+			</url>
+			<releases>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<distributionManagement>
+		<repository>
+			<name>BeSTGRID Releases Repository</name>
+			<id>bestgrid.release</id>
+			<url>http://code.ceres.auckland.ac.nz/nexus/content/repositories/releases
+			</url>
+		</repository>
+		<snapshotRepository>
+			<id>bestgrid.snapshot</id>
+			<name>BeSTGRID Snapshots Repository</name>
+			<url>http://code.ceres.auckland.ac.nz/nexus/content/repositories/snapshots
+			</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.codehaus.mojo.webstart</groupId>
-			<artifactId>webstart-jnlp-servlet</artifactId>
-			<version>1.0-6.0.02_ea_b02.1-SNAPSHOT</version>
-			<scope>runtime</scope>
+			  <groupId>org.codehaus.mojo.webstart</groupId>
+			  <artifactId>webstart-jnlp-servlet</artifactId>
+			  <version>1.0-6.0.02_ea_b02.1</version>
+			  <scope>runtime</scope>
 		</dependency>
 	</dependencies>
 	<build>
@@ -46,10 +101,10 @@
 
 							<jarResources>
 								<jarResource>
-									<groupId>org.vpac.grisu</groupId>
+									<groupId>grisu.frontend</groupId>
 									<artifactId>grisu-template-client</artifactId>
-									<version>0.3-SNAPSHOT</version>
-									<mainClass>org.vpac.grisu.frontend.view.swing.GrisuTemplateApp</mainClass>
+									<version>${templateclient.version}</version>
+									<mainClass>grisu.frontend.view.swing.GrisuTemplateApp</mainClass>
 								</jarResource>
 							</jarResources>
 						</jnlpFile>
@@ -58,10 +113,10 @@
 							<outputFilename>grid-blender.jnlp</outputFilename>
 							<jarResources>
 								<jarResource>
-									<groupId>org.vpac.grisu</groupId>
+									<groupId>grisu.frontend</groupId>
 									<artifactId>blender-client</artifactId>
-									<version>0.3-SNAPSHOT</version>
-									<mainClass>org.vpac.grisu.clients.blender.swing.GrisuBlenderApp</mainClass>
+									<version>${blender.version}</version>
+									<mainClass>grisu.frontend.blender.swing.GrisuBlenderApp</mainClass>
 								</jarResource>
 							</jarResources>
 						</jnlpFile>
@@ -72,7 +127,7 @@
 								<jarResource>
 									<groupId>org.bestgrid.virtscreen</groupId>
 									<artifactId>grisu-virtscreen</artifactId>
-									<version>1.0-SNAPSHOT</version>
+									<version>${virtscreen.version}</version>
 									<mainClass>org.bestgrid.virtscreen.view.GrisuVirtScreen</mainClass>
 								</jarResource>
 							</jarResources>
@@ -82,19 +137,31 @@
 							<outputFilename>grisu-cellML.jnlp</outputFilename>
 							<jarResources>
 								<jarResource>
-									<groupId>org.bestgrid.grisu</groupId>
+									<groupId>org.bestgrid</groupId>
 									<artifactId>grisu-CellML</artifactId>
-									<version>0.1-SNAPSHOT</version>
+									<version>${cellml.version}</version>
 									<mainClass>org.bestgrid.grisu.cellml.view.CellMLApp</mainClass>
 								</jarResource>
 							</jarResources>
-						</jnlpFile>							
+						</jnlpFile>		
+						<jnlpFile>
+							<templateFilename>grixTemplate.vm</templateFilename>
+							<outputFilename>grix.jnlp</outputFilename>
+							<jarResources>
+								<jarResource>
+									<groupId>au.org.arcs.grix</groupId>
+									<artifactId>grix_impl</artifactId>
+									<version>${grix.version}</version>
+									<mainClass>org.vpac.grix.view.swing.Grix</mainClass>
+								</jarResource>
+							</jarResources>
+						</jnlpFile>													
 					</jnlpFiles>
 
 					<sign>
 						<keypass>FxAKs3p6</keypass>
 						<storepass>FxAKs3p6</storepass>
-						<alias>arcs</alias>
+						<alias>grisu</alias>
 
 						<!-- KEYSTORE MANGEMENT -->
 						<keystoreConfig>
@@ -116,7 +183,7 @@
 			<plugin>
 				<artifactId>jdeb</artifactId>
 				<groupId>org.vafer</groupId>
-				<version>0.9-SNAPSHOT</version>
+				<version>0.9-beta4-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -140,11 +207,11 @@
 								</data>
 
 								<data>
-									<src>${project.basedir}/src/deb/data/grisu-downloads-ajp.conf</src>
+									<src>${project.basedir}/src/deb/data/downloads-ajp.conf</src>
 									<type>file</type>
 									<mapper>
 										<type>perm</type>
-										<prefix>/usr/share/doc/grisu/examples</prefix>
+										<prefix>/usr/share/doc/bestgrid/examples</prefix>
 										<user>root</user>
 										<group>root</group>
 									</mapper>

@@ -21,6 +21,10 @@
       Download and start Blender client:
       <a href="webstart/grid-blender.jnlp">here</a>
     </li>
+    <li>
+      Download and start Grix:
+      <a href="webstart/grix.jnlp">here</a>
+    </li>
   </ul>
 </div>
     
