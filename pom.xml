@@ -16,11 +16,11 @@
 	</organization>
 	
 	<properties>
-		<virtscreen.version>0.5</virtscreen.version>
+		<virtscreen.version>0.7.1</virtscreen.version>
 		<cellml.version>0.2.2</cellml.version>
-		<grix.version>1.3.4</grix.version>
+		<grix.version>1.4</grix.version>
 		<blender.version>0.3.3.1.1</blender.version>
-		<templateclient.version>0.5</templateclient.version>
+		<templateclient.version>0.7.2</templateclient.version>
 	</properties>
 	
 	<repositories>
@@ -183,7 +183,7 @@
 			<plugin>
 				<artifactId>jdeb</artifactId>
 				<groupId>org.vafer</groupId>
-				<version>0.9-beta4-SNAPSHOT</version>
+				<version>0.9</version>
 				<executions>
 					<execution>
 						<phase>package</phase>

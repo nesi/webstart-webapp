@@ -29,7 +29,7 @@
       <property name="grisu.defaultServiceInterface" value="BeSTGRID"/>
       
     $dependencies
-      <extension href="http://http://code.ceres.auckland.ac.nz/webstart-bcprov-jdk16-all.jnlp" />
+      <extension href="http://http://code.ceres.auckland.ac.nz/webstart/bcprov-jdk16-all.jnlp" />
     
   </resources>
   <application-desc main-class="$mainClass"/>

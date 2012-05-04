@@ -28,7 +28,7 @@
       <property name="jnlp.versionEnabled" value="true"/>
       <property name="disableDependencyManagement" value="true"/>
     $dependencies
-      <extension href="http://code.ceres.auckland.ac.nz/webstart-bcprov-jdk16-all.jnlp" />
+      <extension href="http://code.ceres.auckland.ac.nz/webstart/bcprov-jdk16-all.jnlp" />
     
   </resources>
   <application-desc main-class="$mainClass"/>
